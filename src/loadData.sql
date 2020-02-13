@@ -197,7 +197,7 @@ CREATE TABLE Blocks (
 
 CREATE TABLE CensusTracts (
     PositionID INT AUTO_INCREMENT,
-    CensusTract DECIMAL (10,0),
+    CensusTract DECIMAL (10,4),
     CONSTRAINT pk_CensusTracts_PositionID
         PRIMARY KEY (PositionID),
     CONSTRAINT fk_CensusTracts_PositionID
