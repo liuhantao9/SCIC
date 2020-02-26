@@ -86,11 +86,15 @@ CREATE TABLE Polices (
 UserName VARCHAR(255) NOT NULL,
 PoliceStationID INT NOT NULL,
 CONSTRAINT pk_Polices_UserName
-PRIMARY KEY (UserName),
+	PRIMARY KEY (UserName),
+CONSTRAINT fk_Polices_UserName
+	FOREIGN KEY (UserName)
+	REFERENCES Users(UserName)
+	ON UPDATE CASCADE ON DELETE CASCADE, 
 CONSTRAINT fk_Polices_PoliceStationID
-FOREIGN KEY (PoliceStationID)
-REFERENCES PoliceStations(PoliceStationID)
-ON UPDATE CASCADE ON DELETE CASCADE
+	FOREIGN KEY (PoliceStationID)
+	REFERENCES PoliceStations(PoliceStationID)
+	ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE Offenses (
